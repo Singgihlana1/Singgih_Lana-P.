@@ -605,20 +605,23 @@ section{
 }
 
 /* ===============================
-   MOBILE VIDEO FIX (TIDAK KEPOTONG)
+   MOBILE VIDEO FIX – FULL WIDTH
    =============================== */
 @media (max-width: 768px){
 
     .main{
-        height: 100svh; /* safe viewport height (mobile browser) */
+        height: 100svh;
+        width: 100%;
+        overflow: hidden;
     }
 
     .bg-video{
-        object-fit: contain;     /* video FULL terlihat */
+        width: 100vw;
+        height: 100svh;
+        object-fit: cover;   /* KUNCI: hilangkan ruang putih */
         background-color: #000016;
     }
 
-    /* Tambahkan overlay agar teks tetap jelas */
     .main::before{
         content: "";
         position: absolute;
@@ -635,6 +638,7 @@ section{
         z-index: 1;
     }
 }
+
 
 
 /* =====================================================
@@ -857,3 +861,14 @@ section{
     }
 }
 
+@media (max-width: 768px){
+
+    .project-slider{
+        overflow-x: hidden;
+    }
+
+    .project-track{
+        width: max-content;
+        padding-right: 40px; /* buffer aman */
+    }
+}
