@@ -605,23 +605,20 @@ section{
 }
 
 /* ===============================
-   MOBILE VIDEO FIX – FULL WIDTH
+   MOBILE VIDEO FIX (TIDAK KEPOTONG)
    =============================== */
 @media (max-width: 768px){
 
     .main{
-        height: 100svh;
-        width: 100%;
-        overflow: hidden;
+        height: 100svh; /* safe viewport height (mobile browser) */
     }
 
     .bg-video{
-        width: 100vw;
-        height: 100svh;
-        object-fit: cover;   /* KUNCI: hilangkan ruang putih */
+        object-fit: contain;     /* video FULL terlihat */
         background-color: #000016;
     }
 
+    /* Tambahkan overlay agar teks tetap jelas */
     .main::before{
         content: "";
         position: absolute;
@@ -638,7 +635,6 @@ section{
         z-index: 1;
     }
 }
-
 
 
 /* =====================================================
@@ -828,47 +824,5 @@ section{
     .main h2,
     .animated-text h3{
         text-shadow: 0 8px 25px rgba(0,0,0,0.6);
-    }
-}
-
-/* =========================================
-   NAVBAR MOBILE – FIX TERPOTONG & RAPI
-   ========================================= */
-@media (max-width: 768px){
-
-    header{
-        padding: 10px 12px;
-    }
-
-    header .navigation{
-        display: flex;
-        flex-wrap: wrap;              /* WAJIB: supaya turun baris */
-        justify-content: center;      /* tengah */
-        gap: 10px 14px;               /* jarak horizontal & vertikal */
-    }
-
-    header .navigation a{
-        margin: 0;                    /* HAPUS margin desktop */
-        font-size: 0.85rem;           /* kecilkan font */
-        white-space: nowrap;          /* cegah kata pecah */
-        padding: 6px 10px;
-        border-radius: 6px;
-        background: rgba(255,255,255,0.08);
-    }
-
-    header.sticky .navigation a{
-        background: rgba(255,255,255,0.15);
-    }
-}
-
-@media (max-width: 768px){
-
-    .project-slider{
-        overflow-x: hidden;
-    }
-
-    .project-track{
-        width: max-content;
-        padding-right: 40px; /* buffer aman */
     }
 }
