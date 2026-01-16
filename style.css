@@ -783,3 +783,29 @@ section{
     }
 }
 
+
+/* =========================================
+   NAVBAR MOBILE – TEKS KE BAWAH (STACK)
+   ========================================= */
+@media (max-width: 768px){
+
+    header{
+        padding: 10px 14px;
+    }
+
+    header .navigation{
+        display: flex;
+        flex-direction: column;     /* TEKS KE BAWAH */
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px;
+    }
+
+    header .navigation a{
+        margin-left: 0;            /* HAPUS MARGIN KANAN */
+        padding: 6px 0;
+        font-size: 0.95rem;
+        width: 100%;
+        white-space: normal;       /* BOLEH TURUN BARIS */
+    }
+}
