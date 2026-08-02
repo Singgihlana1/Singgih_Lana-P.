@@ -311,7 +311,7 @@ section{
 
 
 /* ===============================
-   ASSOCIATION – IMAGE TOP CARD
+   ASSOCIATION / ACTIVITY
    =============================== */
 
 .services{
@@ -324,20 +324,23 @@ section{
     display: flex;
     justify-content: center;
     align-items: stretch;
+    flex-wrap: wrap; /* Mencegah kartu memanjang ke samping, akan otomatis turun ke baris baru */
     gap: 30px;
     margin-top: 40px;
     perspective: 1000px;
 }
 
-/* Card */
+/* Card Utama */
 .services .content .card{
     position: relative;
     width: 340px;
     min-height: 420px;
+    height: auto; /* Mengizinkan kartu bertambah tinggi menyesuaikan teks */
+    padding-bottom: 30px; /* Menambah ruang di bawah teks agar tidak mepet */
     border-radius: 14px;
     overflow: hidden;
 
-    background: #0b0b1f; /* warna bagian bawah */
+    background: #0b0b1f; /* Warna latar kartu bagian bawah */
     color: #ffffff;
 
     transform-style: preserve-3d;
@@ -345,7 +348,7 @@ section{
 }
 
 /* ===============================
-   FOTO BAGIAN ATAS
+   FOTO BAGIAN ATAS (SUDAH DIKUNCI UKURANNYA)
    =============================== */
 .services .content .card::before{
     content: "";
@@ -353,27 +356,27 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    height: 55%;
+    height: 230px; /* TINGGI DIKUNCI. Foto tidak akan berantakan meskipun teks panjang */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
 }
 
-/* Overlay tipis di foto */
+/* Overlay tipis di atas foto */
 .services .content .card::after{
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 55%;
+    height: 230px; /* Harus sama dengan tinggi ::before */
     background: rgba(0,0,0,0.35);
     z-index: 1;
 }
 
 /* ===============================
-   KONTEN BAWAH
+   KONTEN TEKS BAWAH (INFO & IKON)
    =============================== */
 .services .content .card .service-icon,
 .services .content .card .info{
@@ -383,7 +386,7 @@ section{
 }
 
 .services .content .card .service-icon{
-    margin-top: calc(55% + 20px);
+    margin-top: 250px; /* Posisi ikon diturunkan agar selalu mulai di bawah foto (230px foto + 20px jarak) */
     font-size: 4rem;
     color: #4e9eff;
 }
@@ -410,7 +413,7 @@ section{
 }
 
 /* ===============================
-   IMAGE PER CARD
+   IMAGE PER CARD (SESUAIKAN URUTAN KARTU)
    =============================== */
 .services .content .card:nth-child(1)::before{
     background-image: url("image/foto2.JPG");
@@ -429,7 +432,7 @@ section{
 }
 
 /* ===============================
-   RESPONSIVE
+   RESPONSIVE KARTU ACTIVITY
    =============================== */
 @media (max-width: 900px){
     .services .content{
