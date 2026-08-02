@@ -593,8 +593,40 @@ section{
         padding: 12px 16px;
         background-color: rgba(0, 0, 0, 0.65);
         backdrop-filter: blur(6px);
+        display: flex;
+        flex-direction: column; /* Membuat navbar turun sedikit ke bawah jika ada logo/brand */
+        align-items: flex-start;
     }
-    /* dst... */
+
+    /* --- FITUR SCROLL MENU KANAN-KIRI UNTUK HP --- */
+    header .navigation {
+        display: flex;
+        flex-wrap: nowrap;          /* Mencegah menu turun ke baris baru */
+        overflow-x: auto;           /* Mengaktifkan scroll horizontal */
+        -webkit-overflow-scrolling: touch; /* Scroll halus di iPhone/iOS */
+        width: 100%;                /* Lebar menu full layar */
+        padding-bottom: 5px;        /* Jarak agar tidak mepet */
+        gap: 15px;                  /* Jarak antar menu */
+    }
+
+    /* Menyembunyikan tampilan scrollbar agar lebih bersih (Chrome, Safari, Opera) */
+    header .navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Menyembunyikan tampilan scrollbar (Firefox, IE, Edge) */
+    header .navigation {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    header .navigation a {
+        margin-left: 0;             /* Menghapus jarak margin dari tampilan desktop */
+        white-space: nowrap;        /* Mencegah teks menu terpotong ke bawah */
+        font-size: 0.9rem;          /* Sedikit mengecilkan ukuran teks menu di HP */
+    }
+
+    
 }
 
 /* =====================================================
