@@ -424,7 +424,7 @@ section{
     background-image: url("image/foto58.jpeg");
 }
 
-.services .content .card:nth-child(3)::before{
+.services .content .card:nth-child(4)::before{
     background-image: url("image/foto60.jpeg");
 }
 
