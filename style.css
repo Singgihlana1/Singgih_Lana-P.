@@ -356,7 +356,7 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    height: 230px; /* TINGGI DIKUNCI. Foto tidak akan berantakan meskipun teks panjang */
+    height: 330px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -370,7 +370,7 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    height: 230px; /* Harus sama dengan tinggi ::before */
+    height: 330px; /* Harus sama dengan tinggi ::before */
     background: rgba(0,0,0,0.35);
     z-index: 1;
 }
