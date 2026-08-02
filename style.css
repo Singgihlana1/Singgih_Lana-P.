@@ -1,0 +1,817 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* ===============================
+   GLOBAL RESET
+   =============================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   HEADER / NAVBAR
+   =============================== */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    background-color: rgba(255,255,255,0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.sticky{
+    background-color: #3a6cf4;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+header .brand{
+    color: #ffffff;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header .navigation a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 30px;
+}
+
+header .navigation a:hover{
+    color: #dbe4ff;
+}
+
+/* ===============================
+   SECTION GENERAL
+   =============================== */
+section{
+    padding: 100px 200px;
+}
+
+/* ===============================
+   MAIN SECTION
+   =============================== */
+.main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.main .content{
+    max-width: 800px;
+}
+
+.main h2{
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.main h2 span{
+    font-size: 2.8em;
+    font-weight: 600;
+}
+
+/* ===============================
+   ANIMATED TEXT
+   =============================== */
+.animated-text{
+    height: 70px;
+    overflow: hidden;
+}
+
+.animated-text h3{
+    color: #4e9eff;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 70px;
+}
+
+.animated-text h3:first-child{
+    animation: textMove 6s infinite;
+}
+
+@keyframes textMove{
+    0%,15%{ margin-top: 0; }
+    25%,40%{ margin-top: -70px; }
+    50%,65%{ margin-top: -140px; }
+    75%,90%{ margin-top: -70px; }
+    100%{ margin-top: 0; }
+}
+
+/* ===============================
+   BUTTON
+   =============================== */
+.btn{
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #3a6cf4;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #235bf6;
+}
+
+/* ===============================
+   MEDIA ICONS
+   =============================== */
+.media-icons{
+    margin-top: 50px;
+}
+
+.media-icons a{
+    color: #ffffff;
+    font-size: 25px;
+    margin-right: 30px;
+}
+
+/* ===============================
+   SECTION TITLE
+   =============================== */
+.title{
+    text-align: center;
+}
+
+.section-title{
+    position: relative;
+    font-size: 2.2em;
+    font-weight: 800;
+    color: #3a6cf4;
+    margin-bottom: 60px;
+}
+
+.section-title::before{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 140px;
+    height: 4px;
+    background: #3a6cf4;
+    transform: translateX(-50%);
+}
+
+.section-title::after{
+    content: "";
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: #3a6cf4;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+/* ===============================
+   ABOUT
+   =============================== */
+.about .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about .col-left{
+    width: 45%;
+}
+
+.about .col-right{
+    width: 50%;
+}
+
+.img-card{
+    width: 100%;
+    min-height: 450px;
+    position: relative;
+}
+
+.img-card img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ===============================
+   EXPERIENCE
+   =============================== */
+#experience{
+    background: #000016;
+    color: #ffffff;
+}
+
+.experience-container{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.experience-box{
+    display: flex;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.experience-box.scroll-animate{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-box .col-left{
+    width: 45%;
+}
+
+.experience-box .col-right{
+    width: 50%;
+}
+
+.experience-box h3{
+    color: #3a6cf4;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+/* ===============================
+   SKILLS
+   =============================== */
+#skill-page{
+    background: #000016;
+    color: #ffffff;
+}
+
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 30px;
+}
+
+.skill-card{
+    background: #0b0b1f;
+    padding: 28px;
+    border-radius: 14px;
+    transition: 0.3s ease;
+}
+
+.skill-card:hover{
+    transform: translateY(-6px);
+}
+
+.skill-card h3{
+    color: #4e9eff;
+    display: flex;
+    gap: 10px;
+}
+
+.skill-card hr{
+    border: none;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 15px 0;
+}
+
+.skill-card ul{
+    list-style: none;
+}
+
+
+/* ===============================
+   ASSOCIATION – IMAGE TOP CARD
+   =============================== */
+
+.services{
+    background: #000016;
+    padding: 100px 0;
+}
+
+/* Container */
+.services .content{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 40px;
+    perspective: 1000px;
+}
+
+/* Card */
+.services .content .card{
+    position: relative;
+    width: 340px;
+    min-height: 420px;
+    border-radius: 14px;
+    overflow: hidden;
+
+    background: #0b0b1f; /* warna bagian bawah */
+    color: #ffffff;
+
+    transform-style: preserve-3d;
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+/* ===============================
+   FOTO BAGIAN ATAS
+   =============================== */
+.services .content .card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* Overlay tipis di foto */
+.services .content .card::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+/* ===============================
+   KONTEN BAWAH
+   =============================== */
+.services .content .card .service-icon,
+.services .content .card .info{
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.services .content .card .service-icon{
+    margin-top: calc(55% + 20px);
+    font-size: 4rem;
+    color: #4e9eff;
+}
+
+.services .content .card .info h3{
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.services .content .card .info p{
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #dcdcdc;
+}
+
+/* ===============================
+   HOVER ANIMATION
+   =============================== */
+.services .content .card:hover{
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0 25px 55px rgba(0,0,0,0.6);
+}
+
+/* ===============================
+   IMAGE PER CARD
+   =============================== */
+.services .content .card:nth-child(1)::before{
+    background-image: url("image/foto2.JPG");
+}
+
+.services .content .card:nth-child(2)::before{
+    background-image: url("image/foto20.jpeg");
+}
+
+.services .content .card:nth-child(3)::before{
+    background-image: url("image/foto58.jpeg");
+}
+
+.services .content .card:nth-child(3)::before{
+    background-image: url("image/foto60.jpeg");
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 900px){
+    .services .content{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+/* ===============================
+   MY PROJECT – INFINITE SLIDER (FINAL)
+   =============================== */
+
+.projects{
+    background: #000016;
+    padding: 100px 0;
+}
+
+/* Slider container */
+.project-slider{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+/* Track (bergerak terus) */
+.project-track{
+    display: flex;
+    gap: 30px;
+    width: max-content;               /* PENTING */
+    animation: slideProject 120s linear infinite;
+}
+
+/* Card */
+.project-card{
+    min-width: 400px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+    flex-shrink: 0;                   /* WAJIB agar tidak mengecil */
+}
+
+/* Image */
+.project-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Hover zoom */
+.project-card:hover img{
+    transform: scale(1.15);
+}
+
+/* Pause animation on hover */
+.project-slider:hover .project-track{
+    animation-play-state: paused;
+}
+
+/* Keyframes: loop HALUS */
+@keyframes slideProject{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 900px){
+    .project-card{
+        min-width: 280px;
+        height: 220px;
+    }
+}
+
+
+
+
+/* ===============================
+   PHOTO
+   =============================== */
+
+.work{
+    background-color: #000016;
+}
+
+.work .content{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.work .content .card{
+    width: 340px;
+    margin: 15px;
+}
+
+.work .content .card .card-img{
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.work .content .card .card-img img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s linear;
+}
+
+.work .content .card .card-img img:hover{
+    transform: scale(1.2);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+
+    section{
+        padding: 80px 20px;
+    }
+
+    .about .content,
+    .experience-box{
+        flex-direction: column;
+    }
+
+    .about .col-left,
+    .about .col-right,
+    .experience-box .col-left,
+    .experience-box .col-right{
+        width: 100%;
+    }
+}
+
+
+/* ===============================
+   MOBILE RESPONSIVE FIX (HOME & NAVBAR)
+   =============================== */
+@media (max-width: 768px){
+    header{
+        padding: 12px 16px;
+        background-color: rgba(0, 0, 0, 0.65);
+        backdrop-filter: blur(6px);
+    }
+    /* dst... */
+}
+
+/* =====================================================
+   HOME VIDEO RESPONSIVE (DESKTOP + MOBILE)
+   ===================================================== */
+
+/* DEFAULT (DESKTOP / LAPTOP) */
+.bg-video{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* cinematic desktop */
+    z-index: -1;
+}
+
+/* ===============================
+   MOBILE VIDEO FIX (TIDAK KEPOTONG)
+   =============================== */
+@media (max-width: 768px){
+
+    .main{
+        height: 100svh; /* safe viewport height (mobile browser) */
+    }
+
+    .bg-video{
+        object-fit: contain;     /* video FULL terlihat */
+        background-color: #000016;
+    }
+
+    /* Tambahkan overlay agar teks tetap jelas */
+    .main::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            rgba(0,0,0,0.55),
+            rgba(0,0,0,0.75)
+        );
+        z-index: 0;
+    }
+
+    .main .content{
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+/* =====================================================
+   HERO TEXT RESPONSIVE (MOBILE ONLY)
+   ===================================================== */
+
+@media (max-width: 768px){
+
+    /* Container home */
+    .main{
+        padding-top: 110px;
+        text-align: left; /* tetap rapi */
+    }
+
+    .main .content{
+        padding: 0 18px;
+        max-width: 100%;
+    }
+
+    /* Teks "Hello, I'm" */
+    .main .content h2{
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    /* NAMA (INI YANG PALING PENTING) */
+    .main .content h2 span{
+        font-size: clamp(2.4rem, 8vw, 3.2rem);
+        line-height: 1.15;
+        display: block;
+    }
+
+    /* Animated text: Student / Engineering */
+    .animated-text h3{
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    /* Tombol */
+    .btn{
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        margin-top: 22px;
+    }
+
+    /* Sosial icon */
+    .media-icons{
+        margin-top: 26px;
+        gap: 18px;
+    }
+
+    .media-icons a{
+        font-size: 22px;
+    }
+}
+
+
+/* =====================================================
+   SKILLS – ANIMATION & INTERACTION
+   ===================================================== */
+
+.skill-card{
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+/* AOS akan override opacity & transform */
+.skill-card.aos-animate{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover / tap effect */
+.skill-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+/* Mobile tap feedback */
+@media (max-width: 768px){
+    .skill-card:active{
+        transform: scale(0.97);
+    }
+}
+
+
+/* =====================================================
+   FIX ANIMATED TEXT MOBILE (SAFE & VISIBLE)
+   ===================================================== */
+
+/* DESKTOP: BIARKAN ANIMASI LAMA */
+@media (min-width: 769px){
+    .animated-text{
+        height: 70px;
+        overflow: hidden;
+    }
+}
+
+/* MOBILE: STACK + FADE (TANPA HILANG) */
+@media (max-width: 768px){
+
+    .animated-text{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        height: auto;
+    }
+
+    /* SEMUA TEKS TERLIHAT */
+    .animated-text h3{
+        opacity: 1;
+        transform: none;
+        animation: none;
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    /* FADE MASUK BERURUTAN (AOS STYLE) */
+    .animated-text h3:nth-child(1){
+        animation: mobileFade 0.6s ease forwards;
+    }
+
+    .animated-text h3:nth-child(2){
+        animation: mobileFade 0.6s ease forwards;
+        animation-delay: 0.2s;
+    }
+
+    .animated-text h3:nth-child(3){
+        animation: mobileFade 0.6s ease forwards;
+        animation-delay: 0.4s;
+    }
+
+    @keyframes mobileFade{
+        from{
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+
+/* ===============================
+   EXPERIENCE CERTIFICATE LINK
+   =============================== */
+
+.experience-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 14px;
+    padding: 10px 18px;
+
+    border: 2px solid #3a6cf4;
+    border-radius: 8px;
+
+    color: #3a6cf4;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.experience-link:hover{
+    background-color: #3a6cf4;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
