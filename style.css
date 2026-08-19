@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-/* ===============================
-   GLOBAL RESET
-   =============================== */
+/*GLOBAL RESET*/
 *{
     margin: 0;
     padding: 0;
@@ -15,9 +13,7 @@ body{
     overflow-x: hidden;
 }
 
-/* ===============================
-   HEADER / NAVBAR
-   =============================== */
+/*  HEADER / NAVBAR */
 header{
     position: fixed;
     top: 0;
@@ -56,16 +52,12 @@ header .navigation a:hover{
     color: #dbe4ff;
 }
 
-/* ===============================
-   SECTION GENERAL
-   =============================== */
+/* SECTION GENERAL*/
 section{
     padding: 100px 200px;
 }
 
-/* ===============================
-   MAIN SECTION
-   =============================== */
+/*  MAIN SECTION  */
 .main{
     position: relative;
     width: 100%;
@@ -75,13 +67,16 @@ section{
     overflow: hidden;
 }
 
-.bg-video{
+/* =====================================================
+   HOME BACKGROUND IMAGE (DESKTOP + MOBILE)
+   ===================================================== */
+.bg-image {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    object-fit: cover; /* Membuat foto proporsional memenuhi layar */
+    z-index: -1;       /* Memastikan foto berada di belakang teks */
 }
 
 .main .content{
@@ -98,9 +93,7 @@ section{
     font-weight: 600;
 }
 
-/* ===============================
-   ANIMATED TEXT
-   =============================== */
+/*  ANIMATED TEXT */
 .animated-text{
     height: 70px;
     overflow: hidden;
@@ -125,9 +118,7 @@ section{
     100%{ margin-top: 0; }
 }
 
-/* ===============================
-   BUTTON
-   =============================== */
+/*  BUTTON */
 .btn{
     display: inline-block;
     margin-top: 30px;
@@ -143,9 +134,7 @@ section{
     background-color: #235bf6;
 }
 
-/* ===============================
-   MEDIA ICONS
-   =============================== */
+/*  MEDIA ICONS */
 .media-icons{
     margin-top: 50px;
 }
@@ -156,9 +145,7 @@ section{
     margin-right: 30px;
 }
 
-/* ===============================
-   SECTION TITLE
-   =============================== */
+/* SECTION TITLE */
 .title{
     text-align: center;
 }
@@ -194,9 +181,7 @@ section{
     transform: translateX(-50%);
 }
 
-/* ===============================
-   ABOUT
-   =============================== */
+/* ABOUT */
 .about .content{
     display: flex;
     justify-content: space-between;
@@ -226,9 +211,7 @@ section{
     border-radius: 10px;
 }
 
-/* ===============================
-   EXPERIENCE
-   =============================== */
+/*  EXPERIENCE */
 #experience{
     background: #000016;
     color: #ffffff;
@@ -267,9 +250,7 @@ section{
     margin-bottom: 15px;
 }
 
-/* ===============================
-   SKILLS
-   =============================== */
+/*  SKILLS */
 #skill-page{
     background: #000016;
     color: #ffffff;
@@ -310,9 +291,7 @@ section{
 }
 
 
-/* ===============================
-   ASSOCIATION / ACTIVITY
-   =============================== */
+/*  ACTIVITY */
 
 .services{
     background: #000016;
@@ -347,9 +326,7 @@ section{
     transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
-/* ===============================
-   FOTO BAGIAN ATAS (SUDAH DIKUNCI UKURANNYA)
-   =============================== */
+/*  FOTO BAGIAN ATAS (SUDAH DIKUNCI UKURAN)  */
 .services .content .card::before{
     content: "";
     position: absolute;
@@ -370,14 +347,12 @@ section{
     top: 0;
     left: 0;
     width: 100%;
-    height: 330px; /* Harus sama dengan tinggi ::before */
-    background: rgba(0,0,0,0.35);
+    height: 330px; /* nilai sama dengan tinggi ::before */
+    background: rgba(0,0,0,0.35); /* Ubah nilai 0.35 menjadi 0 jika ingin gambar 100% terang */
     z-index: 1;
 }
 
-/* ===============================
-   KONTEN TEKS BAWAH (INFO & IKON)
-   =============================== */
+/*  KONTEN TEKS BAWAH (INFO & IKON)  */
 .services .content .card .service-icon,
 .services .content .card .info{
     position: relative;
@@ -404,17 +379,13 @@ section{
     color: #dcdcdc;
 }
 
-/* ===============================
-   HOVER ANIMATION
-   =============================== */
+/*  HOVER ANIMATION */
 .services .content .card:hover{
     transform: translateY(-12px) scale(1.05);
     box-shadow: 0 25px 55px rgba(0,0,0,0.6);
 }
 
-/* ===============================
-   IMAGE PER CARD (SESUAIKAN URUTAN KARTU)
-   =============================== */
+/*   IMAGE PER CARD (SESUAIKAN URUTAN KARTU)  */
 .services .content .card:nth-child(1)::before{
     background-image: url("image/foto2.JPG");
 }
@@ -431,9 +402,7 @@ section{
     background-image: url("image/foto60.jpeg");
 }
 
-/* ===============================
-   RESPONSIVE KARTU ACTIVITY
-   =============================== */
+/*  RESPONSIVE KARTU ACTIVITY */
 @media (max-width: 900px){
     .services .content{
         flex-direction: column;
@@ -442,9 +411,7 @@ section{
 }
 
 
-/* ===============================
-   MY PROJECT – INFINITE SLIDER (FINAL)
-   =============================== */
+/*  MY PROJECT – INFINITE SLIDER (FINAL) */
 
 .projects{
     background: #000016;
@@ -515,9 +482,7 @@ section{
 
 
 
-/* ===============================
-   PHOTO
-   =============================== */
+/*  PHOTO  */
 
 .work{
     background-color: #000016;
@@ -559,9 +524,7 @@ section{
     transform: scale(1.2);
 }
 
-/* ===============================
-   RESPONSIVE
-   =============================== */
+/*  RESPONSIVE */
 @media (max-width: 1040px){
     header{
         padding: 12px 20px;
@@ -585,9 +548,7 @@ section{
 }
 
 
-/* ===============================
-   MOBILE RESPONSIVE FIX (HOME & NAVBAR)
-   =============================== */
+/*  MOBILE RESPONSIVE FIX (HOME & NAVBAR) */
 @media (max-width: 768px){
     header{
         padding: 12px 16px;
@@ -629,36 +590,20 @@ section{
     
 }
 
-/* =====================================================
-   HOME VIDEO RESPONSIVE (DESKTOP + MOBILE)
-   ===================================================== */
-
-/* DEFAULT (DESKTOP / LAPTOP) */
-.bg-video{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;          /* cinematic desktop */
-    z-index: -1;
-}
-
 /* ===============================
-   MOBILE VIDEO FIX (TIDAK KEPOTONG)
+   MOBILE BACKGROUND FIX
    =============================== */
 @media (max-width: 768px){
-
-    .main{
-        height: 100svh; /* safe viewport height (mobile browser) */
+    .main {
+        height: 100svh;
     }
 
-    .bg-video{
-        object-fit: contain;     /* video FULL terlihat */
-        background-color: #000016;
+    .bg-image {
+        object-fit: cover; /* Tetap cover agar layar HP penuh dengan foto */
     }
 
-    /* Tambahkan overlay agar teks tetap jelas */
-    .main::before{
+    /* Overlay gradasi agar teks tetap terbaca di atas foto */
+    .main::before {
         content: "";
         position: absolute;
         inset: 0;
@@ -669,16 +614,14 @@ section{
         z-index: 0;
     }
 
-    .main .content{
+    .main .content {
         position: relative;
         z-index: 1;
     }
 }
 
 
-/* =====================================================
-   HERO TEXT RESPONSIVE (MOBILE ONLY)
-   ===================================================== */
+/* HERO TEXT RESPONSIVE (MOBILE ONLY) */
 
 @media (max-width: 768px){
 
@@ -732,9 +675,7 @@ section{
 }
 
 
-/* =====================================================
-   SKILLS – ANIMATION & INTERACTION
-   ===================================================== */
+/* SKILLS – ANIMATION & INTERACTION */
 
 .skill-card{
     opacity: 0;
@@ -764,9 +705,7 @@ section{
 }
 
 
-/* =====================================================
-   FIX ANIMATED TEXT MOBILE (SAFE & VISIBLE)
-   ===================================================== */
+/*  FIX ANIMATED TEXT MOBILE (SAFE & VISIBLE) */
 
 /* DESKTOP: BIARKAN ANIMASI LAMA */
 @media (min-width: 769px){
@@ -823,9 +762,7 @@ section{
 }
 
 
-/* ===============================
-   EXPERIENCE CERTIFICATE LINK
-   =============================== */
+/* EXPERIENCE CERTIFICATE LINK */
 
 .experience-link{
     display: inline-flex;
@@ -849,4 +786,37 @@ section{
     background-color: #3a6cf4;
     color: #ffffff;
     transform: translateY(-2px);
+}
+
+/* =====================================================
+   ANIMATED TEXT SLIDER (MOBILE 1 BARIS)
+   ===================================================== */
+@media (max-width: 768px) {
+    .animated-text {
+        height: 45px; /* Mengunci tinggi wadah hanya untuk 1 baris */
+        overflow: hidden;
+        display: block;
+    }
+    
+    .animated-text h3 {
+        font-size: 1.8rem;     /* Ukuran teks untuk layar HP */
+        line-height: 45px;     /* Tinggi baris (wajib sama dengan height di atas) */
+        margin: 0;
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+
+    /* Mengaktifkan animasi geser naik-turun khusus ukuran HP */
+    .animated-text h3:first-child {
+        animation: textMoveMobile 6s infinite;
+    }
+
+    @keyframes textMoveMobile {
+        0%, 15%  { margin-top: 0; }          /* Menampilkan kata 1 (Electrical) */
+        25%, 40% { margin-top: -45px; }      /* Geser ke kata 2 (Engineering) */
+        50%, 65% { margin-top: -90px; }      /* Geser ke kata 3 (Student) */
+        75%, 90% { margin-top: -45px; }      /* Geser kembali ke kata 2 */
+        100%     { margin-top: 0; }          /* Kembali ke kata 1 */
+    }
 }
